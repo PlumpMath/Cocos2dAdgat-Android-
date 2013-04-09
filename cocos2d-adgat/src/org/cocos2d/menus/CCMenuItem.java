@@ -51,7 +51,9 @@ public class CCMenuItem extends CCNode {
         if (rec != null && cb != null) {
         	Class<?> cls = rec.getClass();
         	try {
-        		invocation = cls.getMethod(cb, Object.class);
+        		//invocation = cls.getMethod(cb, Object.class);
+        		// +AS:04092013. have to change the usage of getMethod to pass only 1 arg
+        		invocation = cls.getMethod(cb);
         	} catch (SecurityException e) {
         		// TODO Auto-generated catch block
         		e.printStackTrace();
@@ -72,7 +74,9 @@ public class CCMenuItem extends CCNode {
         if (isEnabled_) {
         	if (targetCallback != null & invocation != null) {
         		try {
-        			invocation.invoke(targetCallback, this);
+        			//invocation.invoke(targetCallback, this);
+        			// +AS:04092013. have to change the way of a method is invoked.
+        			invocation.invoke(targetCallback);
         		} catch (IllegalArgumentException e) {
         			// TODO Auto-generated catch block
         			e.printStackTrace();
