@@ -90,6 +90,29 @@ public class CCMenuItem extends CCNode {
         	}
         }
     }
+    
+    // +AS:04092013. added set target with callback
+    public void setTarget(Object p_target, String p_callback)
+    {
+    	targetCallback = p_target;
+        selector = p_callback;
+        
+        invocation = null;
+        if( p_target != null && p_callback != null ) 
+        {
+        	Class<?> cls = p_target.getClass();
+        	try 
+        	{
+        		invocation = cls.getMethod(p_callback);
+        	} catch (SecurityException e) 
+        	{
+        		e.printStackTrace();
+        	} catch (NoSuchMethodException e) 
+        	{
+        		e.printStackTrace();
+        	}
+        }
+    }
 
     /**
      * The item was selected (not activated), similar to "mouse-over"
