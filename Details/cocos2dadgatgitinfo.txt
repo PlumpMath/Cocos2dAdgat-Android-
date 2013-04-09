@@ -1,0 +1,13 @@
+DirectorGit
+
+Key fingerprint:
+ssh-rsa 1024 02:92:ca:5f:2f:ae:8e:7d:d2:e3:1f:c9:64:cb:45:36
+
+Key comment:
+rsa-key-20130409
+
+Key passphrase:
+cocos2dadgat2013
+
+Confirm passphrase:
+cocos2dadgat2013
